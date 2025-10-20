@@ -8,7 +8,10 @@
   "scripts": {
     "test": "jest --config jest.config.cjs --passWithNoTests",
     "test:watch": "jest --config jest.config.cjs --watch",
-      "start:frontend": "node ./scripts/dev-serve.js"
+      "start:frontend": "node ./scripts/dev-serve.js",
+      "e2e:run": "powershell -ExecutionPolicy Bypass -File ./scripts/run-e2e.ps1",
+  "e2e:run:cmd": "cmd /c \"npx playwright test --project=chromium --reporter=html\"",
+  "e2e:run:node": "node ./scripts/run-e2e.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.1",

@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run unit tests",
+      "type": "shell",
+      "command": "npm test",
+      "group": "test",
+      "presentation": { "reveal": "always" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run e2e tests (Playwright)",
+      "type": "shell",
+      "command": "npm run test:e2e",
+      "group": "test",
+      "presentation": { "reveal": "always" },
+      "problemMatcher": []
+    }
+  ]
+}

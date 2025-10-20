@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Login - Demo</title>
+    <style>
+      body { font-family: Arial, sans-serif; padding: 20px }
+      form { max-width: 320px }
+      label { display:block; margin-bottom:8px }
+    </style>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form id="loginForm">
+      <label>Username <input name="username" /></label>
+      <label>Password <input name="password" type="password" /></label>
+      <button type="submit">Login</button>
+    </form>
+
+    <script>
+      document.getElementById('loginForm').addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        const username = (this.querySelector('input[name="username"]').value || '').trim();
+        // simple routing: studentUser -> /dashboard, tutorUser -> /tutor
+        if (username.toLowerCase().startsWith('student')) {
+          window.location.href = '/dashboard';
+        } else if (username.toLowerCase().startsWith('tutor')) {
+          window.location.href = '/tutor';
+        } else {
+          // default
+          window.location.href = '/dashboard';
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+﻿{
+  "name": "ukzn-marking-system",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": ">=16" },
+  "scripts": {
+    "test": "jest --config jest.config.cjs --passWithNoTests",
+    "test:watch": "jest --config jest.config.cjs --watch"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.0",
+    "@types/jest": "^29.5.0",
+    "typescript": "^5.3.0",
+    "@types/node": "^20.5.0"
+  }
+}

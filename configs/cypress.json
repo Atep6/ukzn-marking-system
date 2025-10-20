@@ -1,0 +1,13 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "video": false,
+  "viewportWidth": 1280,
+  "viewportHeight": 720,
+  "integrationFolder": "tests/e2e",
+  "testFiles": "**/*.spec.ts",
+  "supportFile": "tests/support/index.ts",
+  "env": {
+    "API_URL": "http://localhost:3000/api",
+    "UKZN_API_KEY": "your_ukzn_api_key_here"
+  }
+}

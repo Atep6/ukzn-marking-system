@@ -1,0 +1,20 @@
+﻿module.exports = {
+  rootDir: '.',
+  roots: ['<rootDir>/tests/unit'],
+  // do not use the ts-jest preset field (avoids preset resolution issues)
+  // configure ts-jest via the transform entry (preferred, not under globals)
+  testEnvironment: 'node',
+  transform: {
+    '^.+\\.(ts|tsx)$': [
+      require.resolve('ts-jest'),
+      {
+        tsconfig: 'tsconfig.json',
+        isolatedModules: false
+      }
+    ]
+  },
+  testMatch: ['**/tests/unit/**/*.test.ts', '**/tests/unit/**/*.spec.ts'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  testPathIgnorePatterns: ['/node_modules/', '/tests/e2e/'],
+  transformIgnorePatterns: ['/node_modules/']
+};

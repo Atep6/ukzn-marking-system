@@ -1,0 +1,36 @@
+{
+  "name": "ukzn-marking-system",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "jest --config jest.config.cjs --passWithNoTests",
+    "test:watch": "jest --config jest.config.cjs --watch"
+  },
+  "description": "A marking and grading system for UKZN students with offline capabilities and AI integration.",
+  "main": "src/backend/server.ts",
+  "scripts": {
+    "start": "ts-node src/backend/server.ts",
+    "build": "webpack --config configs/webpack.config.js",
+    "test": "jest",
+    "migrate": "ts-node scripts/migrate-db.ts",
+    "seed": "ts-node scripts/seed.ts"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.0",
+    "@types/jest": "^29.5.0",
+    "typescript": "^5.3.0",
+    "@types/node": "^20.5.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "license": "MIT"
+}

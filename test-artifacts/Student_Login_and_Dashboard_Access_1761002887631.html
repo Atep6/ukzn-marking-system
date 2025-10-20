@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dashboard - Demo</title>
+  </head>
+  <body>
+    <h1>Welcome to the Dashboard</h1>
+    <button id="sync">Sync</button>
+    <div class="sync-status">Online</div>
+
+    <script>
+      const status = document.querySelector('.sync-status');
+      const btn = document.querySelector('#sync');
+      btn.addEventListener('click', () => {
+        if (navigator.onLine === false) {
+          status.textContent = 'Offline - Changes will sync when back online';
+        } else {
+          status.textContent = 'Syncing...';
+          setTimeout(() => status.textContent = 'Online', 300);
+        }
+      });
+    </script>
+  
+</body></html>
