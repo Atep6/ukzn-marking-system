@@ -1,0 +1,11 @@
+node_modules/
+dist/
+playwright-report/
+playwright-report.zip
+test-results/
+test-artifacts/
+.env
+.env.*
+.vscode/
+/.idea
+*.log

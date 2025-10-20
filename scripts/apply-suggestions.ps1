@@ -25,12 +25,14 @@ $defaults = @(
         content = @'
 module.exports = {
   rootDir: '.',
-  roots: ['<rootDir>/tests/unit'],
   preset: 'ts-jest',
   testEnvironment: 'node',
-  transform: { '^.+\\.(ts|tsx)$': 'ts-jest' },
+  roots: ['<rootDir>/tests/unit'],
   testMatch: ['**/tests/unit/**/*.test.ts', '**/tests/unit/**/*.spec.ts'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  transform: {
+    '^.+\\.(ts|tsx)?$': 'ts-jest'
+  },
   testPathIgnorePatterns: ['/node_modules/', '/tests/e2e/'],
   transformIgnorePatterns: ['/node_modules/'],
   globals: {
@@ -79,7 +81,8 @@ module.exports = {
     "ts-jest": "^29.1.0",
     "@types/jest": "^29.5.0",
     "typescript": "^5.3.0",
-    "@types/node": "^20.5.0"
+    "@types/node": "^20.5.0",
+    "playwright": "^1.40.0"
   }
 }
 '@
