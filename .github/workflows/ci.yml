@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      RUN_E2E: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers (optional)
+        if: env.RUN_E2E == 'true'
+        run: npx playwright install --with-deps
+
+      - name: Run unit tests
+        run: npm test
+
+      - name: Run Playwright e2e (optional)
+        if: env.RUN_E2E == 'true'
+        run: npm run test:e2e
